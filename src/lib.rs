@@ -10,15 +10,19 @@ pub fn image_brightness(
 		.decode()?;
 
 	let mut average: f32 = 0.0;
+	let mut n_values: usize = 0;
 
 	for (i, (_, _, pixel)) in img.pixels().enumerate().step_by(sample_rate) {
-		let pixel_brightness = pixel.to_luma()[0];
+		n_values += 1;
+		let pixel_brightness = pixel.to_luma()[0] as f32 / 255.0;
 		if i != 0 {
-			average = (average + pixel_brightness as f32) / 2.0;
+			average += pixel_brightness;
 		} else {
 			average = pixel_brightness as f32;
 		}
 	}
+
+	average /= n_values as f32;
 
 	Ok(average)
 }
