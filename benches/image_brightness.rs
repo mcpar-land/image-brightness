@@ -8,14 +8,19 @@ fn criterion_benchmark(c: &mut Criterion) {
 			image_brightness::image_brightness(&image_data, black_box(1)).unwrap()
 		})
 	});
-	c.bench_function("image_brightness sample 10", |b| {
-		b.iter(|| {
-			image_brightness::image_brightness(&image_data, black_box(10)).unwrap()
-		})
-	});
 	c.bench_function("image_brightness sample 100", |b| {
 		b.iter(|| {
 			image_brightness::image_brightness(&image_data, black_box(100)).unwrap()
+		})
+	});
+	c.bench_function("image_brightness sample 1000", |b| {
+		b.iter(|| {
+			image_brightness::image_brightness(&image_data, black_box(1000)).unwrap()
+		})
+	});
+	c.bench_function("image_brightness sample 10000", |b| {
+		b.iter(|| {
+			image_brightness::image_brightness(&image_data, black_box(10000)).unwrap()
 		})
 	});
 }

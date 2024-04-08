@@ -5,3 +5,5 @@ Takes a single optional argument, the path to the image you want the brightness 
 Outputs a float from `0.0` to `1.0`, where 0 is all black pixels and 1 is all white pixels.
 
 This can also be used as a rust library.
+
+Benchmarks can be run with `cargo bench`
