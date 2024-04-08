@@ -1,0 +1,27 @@
+[package]
+name = "image-brightness"
+version = "0.1.0"
+edition = "2021"
+authors = ["mcpar-land <john@mcpar.land"]
+
+[lib]
+name = "image_brightness"
+path = "src/lib.rs"
+
+[[bin]]
+name = "image-brightness"
+path = "src/bin.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.81"
+clap = { version = "4.5.4", features = ["derive"] }
+image = "0.25.1"
+
+[dev-dependencies]
+criterion = "0.4"
+
+[[bench]]
+name = "image_brightness"
+harness = false
