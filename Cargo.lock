@@ -535,11 +535,10 @@ dependencies = [
 
 [[package]]
 name = "image-brightness"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "clap 4.5.4",
- "clap_derive",
  "criterion",
  "image",
 ]
